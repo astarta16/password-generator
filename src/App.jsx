@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CopyImage from "./assets/icon-copy.svg";
+import { useState } from "react";
 
 const Title = styled.h1`
   color: grey;
@@ -28,8 +29,10 @@ const Card = styled.div`
 `;
 
 const SecondCard = styled.div`
-  background-color: #24232c;
   width: 100%;
+
+  background-color: #24232c;
+
   border-radius: 7px;
   padding: 30px;
 `;
@@ -42,7 +45,27 @@ const CopyIcon = styled.img`
   width: 20px;
 `;
 
+const RangeInputContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+`;
+
+const RangeInputLabel = styled.label`
+  color: white;
+  margin-right: 10px;
+`;
+
+const RangeInput = styled.input`
+  width: 100%;
+  margin-top: 10px;
+  color: #8bf15c;
+`;
+
 function App() {
+  const [rangeValue, setRangeValue] = useState(10);
+
   return (
     <div>
       <Title>password generator</Title>
@@ -51,7 +74,19 @@ function App() {
           <Paragraph>randblabla</Paragraph>
           <CopyIcon src={CopyImage} alt="Copy Icon" />
         </Card>
-        <SecondCard></SecondCard>
+        <SecondCard>
+          <RangeInputContainer>
+            <RangeInputLabel>Character Length:</RangeInputLabel>
+            <p style={{ color: "#a4ffaf" }}>{rangeValue}</p>
+          </RangeInputContainer>
+          <RangeInput
+            type="range"
+            min="0"
+            max="20"
+            value={rangeValue}
+            onChange={(event) => setRangeValue(event.target.value)}
+          />
+        </SecondCard>
       </CardContainer>
     </div>
   );
