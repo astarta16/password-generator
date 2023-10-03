@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import CopyImage from "./assets/icon-copy.svg";
 import { useState } from "react";
 
@@ -16,16 +16,25 @@ const CardContainer = styled.div`
   align-items: center;
 `;
 
+const mobileMediaQuery = css`
+  width: 100%;
+  padding: 10px;
+`;
+
 const Card = styled.div`
   background-color: #24232c;
   color: #e6e5ea;
   padding: 20px;
-  width: 100%;
   border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    ${mobileMediaQuery}
+  }
 `;
 
 const SecondCard = styled.div`
@@ -33,6 +42,10 @@ const SecondCard = styled.div`
   background-color: #24232c;
   border-radius: 7px;
   padding: 30px;
+
+  @media (max-width: 768px) {
+    ${mobileMediaQuery}
+  }
 `;
 
 const Paragraph = styled.p`
@@ -73,12 +86,47 @@ const CheckboxContainer = styled.div`
 
 const CheckboxInput = styled.input`
   margin-right: 10px;
-
   cursor: pointer;
 `;
 
 const CheckboxLabel = styled.label`
   color: #e3e2e4;
+`;
+
+const StrengthBlock = styled.div`
+  display: flex;
+  background-color: #18171f;
+  color: #817d92;
+  border-radius: 5px;
+
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 476px;
+  height: 72px;
+
+  @media (max-width: 768px) {
+    ${mobileMediaQuery}
+    flex-direction: column;
+    height: auto;
+  }
+`;
+
+const StrengthText = styled.p`
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 700;
+`;
+
+const Button = styled.button`
+  margin-top: 10px;
+  width: 100%;
+  background-color: #a4ffaf;
+  color: #24232c;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 5px;
 `;
 
 function App() {
@@ -127,6 +175,10 @@ function App() {
             <CheckboxInput type="checkbox" />
             <CheckboxLabel htmlFor="symbols">Include Symbols</CheckboxLabel>
           </CheckboxContainer>
+          <StrengthBlock>
+            <StrengthText>STRENGTH</StrengthText>
+          </StrengthBlock>
+          <Button>Generate</Button>
         </SecondCard>
       </CardContainer>
     </div>
