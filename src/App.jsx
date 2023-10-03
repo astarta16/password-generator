@@ -30,9 +30,7 @@ const Card = styled.div`
 
 const SecondCard = styled.div`
   width: 100%;
-
   background-color: #24232c;
-
   border-radius: 7px;
   padding: 30px;
 `;
@@ -60,7 +58,27 @@ const RangeInputLabel = styled.label`
 const RangeInput = styled.input`
   width: 100%;
   margin-top: 10px;
-  color: #8bf15c;
+`;
+
+const RangeValue = styled.p`
+  color: #a4ffaf;
+`;
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  color: #e6e5ea;
+  margin-top: 10px;
+`;
+
+const CheckboxInput = styled.input`
+  margin-right: 10px;
+
+  cursor: pointer;
+`;
+
+const CheckboxLabel = styled.label`
+  color: #e3e2e4;
 `;
 
 function App() {
@@ -77,7 +95,7 @@ function App() {
         <SecondCard>
           <RangeInputContainer>
             <RangeInputLabel>Character Length:</RangeInputLabel>
-            <p style={{ color: "#a4ffaf" }}>{rangeValue}</p>
+            <RangeValue>{rangeValue}</RangeValue>
           </RangeInputContainer>
           <RangeInput
             type="range"
@@ -86,6 +104,29 @@ function App() {
             value={rangeValue}
             onChange={(event) => setRangeValue(event.target.value)}
           />
+          <CheckboxContainer>
+            <CheckboxInput type="checkbox" />
+            <CheckboxLabel htmlFor="uppercase">
+              Include Uppercase Letters
+            </CheckboxLabel>
+          </CheckboxContainer>
+
+          <CheckboxContainer>
+            <CheckboxInput type="checkbox" />
+            <CheckboxLabel htmlFor="lowercase">
+              Include Lowercase Letters
+            </CheckboxLabel>
+          </CheckboxContainer>
+
+          <CheckboxContainer>
+            <CheckboxInput type="checkbox" />
+            <CheckboxLabel htmlFor="numbers">Include Numbers</CheckboxLabel>
+          </CheckboxContainer>
+
+          <CheckboxContainer>
+            <CheckboxInput type="checkbox" />
+            <CheckboxLabel htmlFor="symbols">Include Symbols</CheckboxLabel>
+          </CheckboxContainer>
         </SecondCard>
       </CardContainer>
     </div>
