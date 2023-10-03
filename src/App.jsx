@@ -98,12 +98,11 @@ const StrengthBlock = styled.div`
   background-color: #18171f;
   color: #817d92;
   border-radius: 5px;
-
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
   width: 476px;
-  height: 72px;
+  height: 50px;
 
   @media (max-width: 768px) {
     ${mobileMediaQuery}
