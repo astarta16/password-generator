@@ -68,6 +68,7 @@ const RangeInputLabel = styled.label`
 const RangeInput = styled.input`
   width: 100%;
   margin-top: 10px;
+  accent-color: #a4ffaf;
 `;
 
 const RangeValue = styled.p`
@@ -84,6 +85,7 @@ const CheckboxContainer = styled.div`
 const CheckboxInput = styled.input`
   margin-right: 10px;
   cursor: pointer;
+  accent-color: #a4ffaf;
 `;
 
 const CheckboxLabel = styled.label`
@@ -128,6 +130,14 @@ const Button = styled.button`
 
 function App() {
   const [rangeValue, setRangeValue] = useState(10);
+  const [checkBox, setCheckbox] = useState("");
+
+  const checkBoxText = [
+    "Include Uppercase Letters",
+    "Include Lowercase Letters",
+    "Include Numbers",
+    "Include Symbols",
+  ];
 
   return (
     <div>
@@ -149,29 +159,15 @@ function App() {
             value={rangeValue}
             onChange={(event) => setRangeValue(event.target.value)}
           />
-          <CheckboxContainer>
-            <CheckboxInput type="checkbox" />
-            <CheckboxLabel htmlFor="uppercase">
-              Include Uppercase Letters
-            </CheckboxLabel>
-          </CheckboxContainer>
+          <div>
+            {checkBoxText.map((text, index) => (
+              <CheckboxContainer key={index}>
+                <CheckboxInput type="checkbox" />
+                <CheckboxLabel>{text}</CheckboxLabel>
+              </CheckboxContainer>
+            ))}
+          </div>
 
-          <CheckboxContainer>
-            <CheckboxInput type="checkbox" />
-            <CheckboxLabel htmlFor="lowercase">
-              Include Lowercase Letters
-            </CheckboxLabel>
-          </CheckboxContainer>
-
-          <CheckboxContainer>
-            <CheckboxInput type="checkbox" />
-            <CheckboxLabel htmlFor="numbers">Include Numbers</CheckboxLabel>
-          </CheckboxContainer>
-
-          <CheckboxContainer>
-            <CheckboxInput type="checkbox" />
-            <CheckboxLabel htmlFor="symbols">Include Symbols</CheckboxLabel>
-          </CheckboxContainer>
           <StrengthBlock>
             <StrengthText>STRENGTH</StrengthText>
           </StrengthBlock>
