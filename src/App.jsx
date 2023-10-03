@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import CopyImage from "./assets/icon-copy.svg";
 import { useState } from "react";
 
@@ -16,11 +16,6 @@ const CardContainer = styled.div`
   align-items: center;
 `;
 
-const mobileMediaQuery = css`
-  width: 100%;
-  padding: 10px;
-`;
-
 const Card = styled.div`
   background-color: #24232c;
   color: #e6e5ea;
@@ -33,7 +28,8 @@ const Card = styled.div`
   width: 100%;
 
   @media (max-width: 768px) {
-    ${mobileMediaQuery}
+    width: 100%;
+    padding: 10px;
   }
 `;
 
@@ -44,7 +40,8 @@ const SecondCard = styled.div`
   padding: 30px;
 
   @media (max-width: 768px) {
-    ${mobileMediaQuery}
+    width: 100%;
+    padding: 10px;
   }
 `;
 
@@ -105,7 +102,8 @@ const StrengthBlock = styled.div`
   height: 50px;
 
   @media (max-width: 768px) {
-    ${mobileMediaQuery}
+    width: 100%;
+    padding: 10px;
     flex-direction: column;
     height: auto;
   }
