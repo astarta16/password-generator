@@ -130,7 +130,6 @@ const Button = styled.button`
 
 function App() {
   const [rangeValue, setRangeValue] = useState(10);
-  const [checkBox, setCheckbox] = useState("");
 
   const checkBoxText = [
     "Include Uppercase Letters",
