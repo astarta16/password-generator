@@ -48,6 +48,7 @@ export const Paragraph = styled.p`
 `;
 
 export const CopyIcon = styled.img`
+  cursor: pointer;
   width: 20px;
 `;
 
@@ -67,6 +68,7 @@ export const RangeInput = styled.input`
   width: 100%;
   margin-top: 10px;
   accent-color: #a4ffaf;
+  cursor: pointer;
 `;
 
 export const RangeValue = styled.p`
@@ -104,15 +106,37 @@ export const StrengthBlock = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     padding: 10px;
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
+    align-items: flex-start;
   }
 `;
 
 export const StrengthText = styled.p`
-  margin-left: 10px;
   font-size: 18px;
   font-weight: 700;
+  margin-left: 10px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+`;
+
+export const StrengthRectangleContainer = styled.div`
+  display: flex;
+  gap: 3px;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+`;
+
+export const StrengthRectangle = styled.div`
+  width: 10px;
+  height: 28px;
+  background-color: #0a140b;
+  border: 2px solid white;
+  border-radius: px;
+  margin-right: 10px;
 `;
 
 export const Button = styled.button`
@@ -124,4 +148,5 @@ export const Button = styled.button`
   font-weight: 700;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 `;

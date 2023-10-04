@@ -14,8 +14,10 @@ import {
   CheckboxContainer,
   CheckboxInput,
   CheckboxLabel,
-  StrengthBlock,
+  StrengthRectangleContainer,
   StrengthText,
+  StrengthBlock,
+  StrengthRectangle,
   Button,
 } from "./style";
 
@@ -65,6 +67,12 @@ function App() {
 
           <StrengthBlock>
             <StrengthText>STRENGTH</StrengthText>
+            <StrengthRectangleContainer>
+              <StrengthRectangle />
+              <StrengthRectangle />
+              <StrengthRectangle />
+              <StrengthRectangle />
+            </StrengthRectangleContainer>
           </StrengthBlock>
           <Button>Generate</Button>
         </SecondCard>
