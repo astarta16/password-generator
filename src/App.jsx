@@ -78,6 +78,11 @@ function App() {
       chars += symbolSet;
     }
 
+    if (!upperCase && !lowerCase && !number && !symbol) {
+      setPassword("Please mark at least one box");
+      return;
+    }
+
     let newPassword = "";
 
     for (let i = 0; i < rangeValue; i++) {
