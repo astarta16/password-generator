@@ -61,23 +61,31 @@ function App() {
     const numberSet = "0123456789";
     const symbolSet = "@#$%^&*()_+~|}{[]></-=";
 
-    let chars = ""
-    if(upperCase) {
-      chars += upperCaseSet }
+    let chars = "";
+    if (upperCase) {
+      chars += upperCaseSet;
+    }
 
-      if(lowerCase) {
-        chars += lowerCaseSet
-      }
+    if (lowerCase) {
+      chars += lowerCaseSet;
+    }
 
-      if(number) {
-        chars += numberSet
-      }
+    if (number) {
+      chars += numberSet;
+    }
 
-      if(symbol) {
-        chars += symbolSet
-      }
-     console.log(chars)
+    if (symbol) {
+      chars += symbolSet;
+    }
 
+    let newPassword = "";
+
+    for (let i = 0; i < rangeValue; i++) {
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      newPassword += chars[randomIndex];
+    }
+
+    setPassword(newPassword);
   }
 
   return (
@@ -85,7 +93,7 @@ function App() {
       <Title>password generator</Title>
       <CardContainer>
         <Card>
-          <Paragraph>randblabla</Paragraph>
+          <Paragraph>{password}</Paragraph>
           <CopyIcon src={CopyImage} alt="Copy Icon" />
         </Card>
         <SecondCard>

@@ -44,6 +44,7 @@ export const SecondCard = styled.div`
 `;
 
 export const Paragraph = styled.p`
+color:white;
   margin: 0;
 `;
 
